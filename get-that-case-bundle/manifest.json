@@ -1,0 +1,23 @@
+{
+    "name": "Page Redder",
+    "description": "Make the current page red",
+    "version": "2.0",
+    "permissions": [
+        "activeTab"
+    ],
+    "background": {
+        "scripts": ["jquery-1.11.1.min.js", "popup.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_title": "Make this page red"
+    },
+    "manifest_version": 2,
+    "permissions": [
+        "tabs", "http://cb.hbsp.harvard.edu/cb/search/*"
+    ],
+    "content_scripts": [{
+        "js": ["jquery-1.11.1.min.js", "popup.js"],
+        "matches": ["http://cb.hbsp.harvard.edu/cb/search/*"]
+    }]
+}
