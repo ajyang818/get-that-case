@@ -17,7 +17,7 @@
         "tabs", "http://cb.hbsp.harvard.edu/cb/search/*"
     ],
     "content_scripts": [{
-        "js": ["jquery-1.11.1.min.js", "popup.js"],
+        "js": ["jquery-1.11.1.min.js", "jquery_regex.js", "popup.js"],
         "matches": ["http://cb.hbsp.harvard.edu/cb/search/*", "http://cb.hbsp.harvard.edu/cb/web/*"]
     }]
 }

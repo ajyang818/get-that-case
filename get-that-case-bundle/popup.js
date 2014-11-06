@@ -7,11 +7,22 @@ console.log('Activating browserAction block');
 
 console.log('Activating add_icon.js');
 var test = document.getElementById("allowAbsProduct0");
-test.style.backgroundColor="green";
+// test.style.backgroundColor="green";
 
 $(document).ready(function() {
   $('a').each(function(index, divBlock){
     $(divBlock).attr('style', "color: green");
+  });
+  $("div:regex(id, allowAbsProduct\\d)").each(function(index, resultBlock) {
+      var prodNums = $(this).find("h3:contains('Product number')");
+      if (prodNums.length == 1) {
+        var prodNumBlock = prodNums[0],
+            prodNumText = prodNumBlock.parentElement.textContent,
+            prodNum = prodNumText.replace("Product Number:", "");  // Results in the pure product number
+
+        // Adds link to ordering
+        $(this).find("div:contains('English PDF')").append("<br /><a href='#'>Order Now</a>");
+      }
   });
 });
 
