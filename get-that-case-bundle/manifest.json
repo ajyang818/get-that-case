@@ -18,6 +18,6 @@
     ],
     "content_scripts": [{
         "js": ["jquery-1.11.1.min.js", "popup.js"],
-        "matches": ["http://cb.hbsp.harvard.edu/cb/search/*"]
+        "matches": ["http://cb.hbsp.harvard.edu/cb/search/*", "http://cb.hbsp.harvard.edu/cb/web/*"]
     }]
 }
