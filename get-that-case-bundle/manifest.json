@@ -11,7 +11,10 @@
     },
     "manifest_version": 2,
     "permissions": [
-        "tabs", "http://cb.hbsp.harvard.edu/cb/search/*",
+        "cookies",
+        "tabs",
+        "http://hbs.edu/*",
+        "http://cb.hbsp.harvard.edu/cb/search/*",
         "https://inside.hbs.edu/Departments/KLS/Lists/HBP%20Case%20Request%20Form/Item/newifs.aspx"
     ],
     "content_scripts": [

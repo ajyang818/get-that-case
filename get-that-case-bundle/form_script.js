@@ -8,7 +8,7 @@ $(document).ready(function() {
 
       sendResponse({status: "Received case details"});
 
-      $("input[originalid='V1_I1_T1']").val("");
+      $("input[originalid='V1_I1_T1']").val(request.userEmail);
       $("input[originalid='V1_I1_T2']").val(request.prodNum);
       $("textarea[originalid='V1_I1_T3']").val(request.prodTitle);
 
