@@ -6,19 +6,22 @@
         "activeTab"
     ],
     "background": {
-        "scripts": ["jquery-1.11.1.min.js", "popup.js"],
+        "scripts": ["jquery-1.11.1.min.js", "background_script.js"],
         "persistent": false
-    },
-    "browser_action": {
-        "default_title": "Make this page red",
-        "default_popup": "popup.html"
     },
     "manifest_version": 2,
     "permissions": [
-        "tabs", "http://cb.hbsp.harvard.edu/cb/search/*"
+        "tabs", "http://cb.hbsp.harvard.edu/cb/search/*",
+        "https://inside.hbs.edu/Departments/KLS/Lists/HBP%20Case%20Request%20Form/Item/newifs.aspx"
     ],
-    "content_scripts": [{
-        "js": ["jquery-1.11.1.min.js", "jquery_regex.js", "underlying.js"],
+    "content_scripts": [
+    {
+        "js": ["jquery-1.11.1.min.js", "jquery_regex.js", "hbp_script.js"],
         "matches": ["http://cb.hbsp.harvard.edu/cb/search/*", "http://cb.hbsp.harvard.edu/cb/web/*"]
-    }]
+    },
+    {
+        "js": ["jquery-1.11.1.min.js", "form_script.js"],
+        "matches": ["https://inside.hbs.edu/Departments/KLS/Lists/HBP%20Case%20Request%20Form/Item/newifs.aspx"]
+    }
+    ]
 }
