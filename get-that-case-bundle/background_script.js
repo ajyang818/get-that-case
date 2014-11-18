@@ -26,7 +26,8 @@ chrome.runtime.onMessage.addListener(
           chrome.tabs.sendMessage(tabs[0].id, {userEmail: hbsEmail, prodNum: request.prodNum, prodTitle: request.prodTitle}, function(response) {
           });
         });
-        logger.push({user: hbsEmail, prodNum: request.prodNum, prodTitle: request.prodTitle});
+        var now = Date();
+        logger.push({user: hbsEmail, prodNum: request.prodNum, prodTitle: request.prodTitle, timestamp: now});
     }
 
     window.setTimeout(sendInfoToForm, 1500);
