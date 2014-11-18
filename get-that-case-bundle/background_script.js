@@ -1,6 +1,8 @@
 // Background script that receives a signal that the user clicked on "Order now", and then
 // pops open a new tab with the case request form. It will then try to fill in the form with the info it received.
 
+var logger = new Firebase("https://get-that-case.firebaseio.com/");
+
 chrome.runtime.onMessage.addListener(
 
   function(request, sender, sendResponse) {
@@ -24,6 +26,7 @@ chrome.runtime.onMessage.addListener(
           chrome.tabs.sendMessage(tabs[0].id, {userEmail: hbsEmail, prodNum: request.prodNum, prodTitle: request.prodTitle}, function(response) {
           });
         });
+        logger.push({user: hbsEmail, prodNum: request.prodNum, prodTitle: request.prodTitle});
     }
 
     window.setTimeout(sendInfoToForm, 1500);

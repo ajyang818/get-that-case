@@ -6,7 +6,7 @@
         "activeTab"
     ],
     "background": {
-        "scripts": ["jquery-1.11.1.min.js", "background_script.js"],
+        "scripts": ["jquery-1.11.1.min.js", "firebase.min.js", "background_script.js"],
         "persistent": false
     },
     "manifest_version": 2,

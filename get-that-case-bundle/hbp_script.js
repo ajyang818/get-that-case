@@ -10,7 +10,7 @@ $(document).ready(function() {
             prodNum = prodNumText.replace("Product number:", ""),
             prodTitle = $(this).find("td.titleBlock").find("h1 a")[0].textContent;  // Results in the pure product number
 
-        $(this).find("div:contains('English PDF')").append("<br /><a class='click-test' href='#' prodNum='" + prodNum + "' prodTitle='" + prodTitle + "'>Get That Case!</a>");
+        $(this).find("div:contains('English PDF')").append("<br /><a class='click-test' prodNum='" + prodNum + "' prodTitle='" + prodTitle + "'>Get That Case!</a>");
       }
   });
 
