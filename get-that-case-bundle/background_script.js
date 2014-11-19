@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener(
     // When we get that signal, this background script will send over the form data.
 
     // debugger;
-    chrome.runtime.onConnect.addListener(function(port) {
+    chrome.runtime.onConnect.addListener(function listener(port) {
 
       console.assert(port.name == "formStatus");
       port.onMessage.addListener(function(msg) {
@@ -39,6 +39,7 @@ chrome.runtime.onMessage.addListener(
             // var now = Date();
             // logger.push({user: hbsEmail, prodNum: request.prodNum, prodTitle: request.prodTitle, timestamp: now});
         }
+        chrome.runtime.onConnect.removeListener(listener);
       });
 
 
