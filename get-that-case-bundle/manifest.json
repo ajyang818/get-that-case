@@ -5,6 +5,7 @@
     "permissions": [
         "activeTab"
     ],
+    "icons": {"128": "bookicon.png"},
     "background": {
         "scripts": ["jquery-1.11.1.min.js", "firebase.min.js", "background_script.js"],
         "persistent": false
