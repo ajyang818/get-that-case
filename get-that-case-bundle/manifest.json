@@ -1,7 +1,7 @@
 {
     "name": "Get That Case!",
     "description": "Helps you order an HBS case",
-    "version": "2.0",
+    "version": "0.1",
     "permissions": [
         "activeTab"
     ],
