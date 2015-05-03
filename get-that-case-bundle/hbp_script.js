@@ -2,15 +2,15 @@
 
 $(document).ready(function() {
 
-  $("div:regex(id, allowAbsProduct\\d)").each(function(index, resultBlock) {
-      var prodNums = $(this).find("h3:contains('Product number')");
+  $("tr.searchResult").each(function(index, resultBlock) {
+      var prodNums = $(this).find("dt:contains('Product #')");
       if (prodNums.length == 1) {
-        var prodNumBlock = prodNums[0],
-            prodNumText = prodNumBlock.parentElement.textContent,
+        var prodNumBlock = prodNums.next(),
+            prodNumText = prodNumBlock[0].textContent,
             prodNum = prodNumText.replace("Product number:", ""),
-            prodTitle = $(this).find("td.titleBlock").find("h1 a")[0].textContent;  // Results in the pure product number
-
-        $(this).find("div:contains('English PDF')").append("<br /><a class='click-test' prodNum='" + prodNum + "' prodTitle=\"" + prodTitle + "\">Get That Case!</a>");
+            prodTitle = $(this).find("p.title")[1].textContent;
+        // debugger;
+        $(this).find("ul.teaching-supplements").append("<li><a class='click-test' style='cursor:pointer' prodNum='" + prodNum + "' prodTitle=\"" + prodTitle + "\">Get That Case!</a></li>");
       }
   });
 
@@ -26,3 +26,9 @@ $(document).ready(function () {
     });
   });
 });
+
+// window.addEventListener ("load", myMain, false);
+
+// function myMain (evt) {
+//   debugger;
+// }

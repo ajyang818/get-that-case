@@ -9,14 +9,14 @@ $(document).ready(function() {
 
       sendResponse({status: "Received case details"});
 
-      $("input[originalid='V1_I1_T1']").val(request.userEmail);
-      $("input[originalid='V1_I1_T2']").val(request.prodNum);
-      $("textarea[originalid='V1_I1_T3']").val(request.prodTitle);
+      $("input[originalid='V1_I1_T2']").val(request.userEmail);
+      $("input[originalid='V1_I1_T3']").val(request.prodNum);
+      $("textarea[originalid='V1_I1_T4']").val(request.prodTitle);
 
-      $("input[originalid='V1_I1_T1']").focus();
       $("input[originalid='V1_I1_T2']").focus();
-      $("textarea[originalid='V1_I1_T3']").focus();
-      $("input[originalid='V1_I1_T1']").focus();
+      $("input[originalid='V1_I1_T3']").focus();
+      $("textarea[originalid='V1_I1_T4']").focus();
+      $("input[originalid='V1_I1_T2']").focus();
 
       // Log usage data to Firebase
       var logger = new Firebase("https://get-that-case.firebaseio.com/");
