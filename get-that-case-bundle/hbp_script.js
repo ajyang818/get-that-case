@@ -20,7 +20,7 @@ function myMain (evt) {
         }
 
         $(document).ready(function () {
-            $('.gtc-link').click(function() {
+            $('.gtc-link').off("click").on("click", function() {
                 var prodNum = $(this)[0].getAttribute("prodNum"),
                     prodTitle = $(this)[0].getAttribute("prodTitle");
                 chrome.runtime.sendMessage({prodNum: prodNum, prodTitle: prodTitle}, function(response) {
